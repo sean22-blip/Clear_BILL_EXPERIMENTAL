@@ -1,0 +1,3 @@
+interface InterfaceStaff{
+    handleLogin(): void;
+}
