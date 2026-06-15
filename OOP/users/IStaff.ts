@@ -1,4 +1,5 @@
 interface InterfaceStaff{
     handleLogin(): void;
-    handleSignout(): void;
+    handleLogout(): void;
 }
+
