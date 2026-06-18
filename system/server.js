@@ -12,12 +12,12 @@ const app = express()
 
 app.use(express.json());
 
-app.use('/categories', categoryRoutes)
+
+// app.use('/categories', categoryRoutes)
 app.use('/departments', departmentRoutes)
 app.use('/machines', machineRoutes)
 app.use('/medicines', medicineRoutes)
 app.use('/staffs', staffRoutes)
 app.listen(port, () => {
       console.log(`🚀 Srver is running on http://localhost:${port}`);
-
 })
