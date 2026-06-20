@@ -1,4 +1,4 @@
-interface InterfaceStaff{
+export interface InterfaceStaff{
     handleLogin(): void;
     handleLogout(): void;
 }

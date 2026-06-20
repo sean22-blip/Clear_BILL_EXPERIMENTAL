@@ -1,6 +1,6 @@
 import { pool } from "../../system/dbConnection.js";
 import { Request, Response } from 'express';
-
+import { InterfaceStaff } from "./IStaff.js";
 export abstract class Staff implements InterfaceStaff {
     handleLogin(): void {
         throw new Error("Method not implemented.");
