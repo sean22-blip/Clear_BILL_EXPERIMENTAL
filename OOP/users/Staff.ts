@@ -1,4 +1,4 @@
-import { pool } from "../../system/dbConnection.js";
+import { pool } from "../../backend/config/dbConnection.js";
 import { Request, Response } from 'express';
 import { InterfaceStaff } from "./IStaff.js";
 export abstract class Staff implements InterfaceStaff {
