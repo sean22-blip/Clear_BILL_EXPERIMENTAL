@@ -4,12 +4,17 @@ export const getAllcategory = (req, res) => {
 res.status(200).json(categories);
 }
 export const getCategoryById = (req, res) => {
-    const id = Number(req.params.id);
-    const category =  categories.find((category) => category.id === id);
-    if(!id){
-        return res.status(404).json({error: `id cannot be empty!`})
+    // const id = Number(req.params.id);
+    // const category =  categories.find((category) => category.id === id);
+    // if(!id){
+    //     return res.status(404).json({error: `id cannot be empty!`})
+    // }
+    // res.status(200).json(category);
+    try {
+        const [rows] = await 
+    } catch (error) {
+        
     }
-    res.status(200).json(category);
 }
 export const createCategory = (req, res) => {
     const {name, description, baseCost} = req.body;

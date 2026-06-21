@@ -2,7 +2,8 @@
 node_modules/
 package-lock.json
 .json
-
+package-DESKTOP-EM56G2F.json
+package-lock-DESKTOP-EM56G2F.json
 # Environment variables
 .env
 .env.local
