@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize"
-import sequelize from "../../../../frontend/db_connection"
+import sequelize from "../../../db_connection"
 const patients = sequelize.define('patient', {
-    patient_id :{
+    patient_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -9,18 +9,18 @@ const patients = sequelize.define('patient', {
     },
     user_id: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: false
     },
-    gender:{
+    gender: {
         type: DataTypes.ENUM('Male', 'Female', 'Other'),
-        allowNull: true
+        allowNull: false
     },
     phone: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
-    address:{
+    address: {
         type: DataTypes.TEXT,
-        allowNull: true
+        allowNull: false
     }
-})
+}, { freezeTableName: true })

@@ -1,10 +1,10 @@
 import { Staff } from "./Staff";
 class Manager extends Staff{
-    handleLogin(): void {
-        
+    handleLogin(oldPassword: string, newPassword: string): boolean {
+        return false;
     }
-    handleLogout(): void {
-        
+    handleLogout(): boolean {
+        return false;
     }
     can(action: string): boolean {
         return false;

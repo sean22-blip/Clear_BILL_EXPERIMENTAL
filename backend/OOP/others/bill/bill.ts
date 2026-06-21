@@ -1,4 +1,4 @@
-import sequelize from "../../../../frontend/db_connection"
+import sequelize from "../../../db_connection"
 import { DataTypes } from "sequelize"
   const bills = sequelize.define('bill', {
     bill_id: {
@@ -25,4 +25,8 @@ import { DataTypes } from "sequelize"
         type: DataTypes.ENUM('Paid', 'Unpad'), defaultValue: 'Unpaid',
         allowNull: false
     }
-})
+
+}, {
+freezeTableName: true
+}
+)

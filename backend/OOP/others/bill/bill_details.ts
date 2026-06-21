@@ -24,4 +24,7 @@ const bill_details = sequelize.define('bill_detail', {
         type: DataTypes.DECIMAL(10,2), defaultValue: 0.00,
         allowNull: false
     }
-})
+},{
+    freezeTableName: true
+}
+)

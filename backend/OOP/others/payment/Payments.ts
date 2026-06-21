@@ -1,5 +1,5 @@
-import sequelize from "../../../../frontend/db_connection"
 import { DataTypes, TIME } from "sequelize"
+import sequelize from "../../../db_connection"
 const payments = sequelize.define('payment', {
     payment_id:{
         type: DataTypes.INTEGER,
@@ -21,6 +21,9 @@ const payments = sequelize.define('payment', {
     },
     payment_date:{
         type:DataTypes.TIME, defaultValue: TIME,
-        allowNull: true
+        allowNull: false
     }
+}
+, {
+    freezeTableName: true
 })

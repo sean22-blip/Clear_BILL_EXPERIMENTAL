@@ -1,7 +1,7 @@
 // const Action = ['create', 'read', 'update', 'delete']
 export interface InterfaceStaff{
-    handleLogin(): void;
-    handleLogout(): void;
+    handleLogin(name: string, password: string): boolean;
+    handleLogout(): boolean;
     can(action:string):boolean;
 }
 

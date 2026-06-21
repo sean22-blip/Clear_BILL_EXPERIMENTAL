@@ -1,11 +1,11 @@
-import sequelize from "../../../frontend/db_connection"
 import { DataTypes } from "sequelize"
+import sequelize from "../../db_connection"
 const services = sequelize.define('service', {
     service_id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement:true,
         allowNull: false,
-        autoIncrement:true
     },
     service_name:{
         type: DataTypes.STRING,
@@ -19,4 +19,6 @@ const services = sequelize.define('service', {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     }
+}, {
+    freezeTableName: true
 })

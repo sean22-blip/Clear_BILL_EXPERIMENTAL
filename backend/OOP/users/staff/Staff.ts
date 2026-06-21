@@ -82,38 +82,40 @@
 //         return false;
 //     }
 // }
-import {DataTypes, Model } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import { InterfaceStaff } from "./IStaff";
 import sequelize from "../../../db_connection";
-export abstract class Staff extends Model<InterfaceStaff> implements InterfaceStaff {
-      staffs = sequelize.define('staff', {
-        user_id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        role: {
-            type: DataTypes.ENUM('Admin', 'Cashier', 'Receptionist', 'Patient'),
-            allowNull: false
-        }
+const staffs = sequelize.define('staff', {
+      user_id: {
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          autoIncrement: true,
+          allowNull: false,
+      },
+      name: {
+          type: DataTypes.STRING,
+          allowNull: false
+      },
+      email: {
+          type: DataTypes.STRING,
+          allowNull: false
+      },
+      password: {
+          type: DataTypes.STRING,
+          allowNull: false
+      },
+      role: {
+          type: DataTypes.ENUM('Admin', 'Cashier', 'Receptionist', 'Patient'),
+          allowNull: false
+      }
+  }, {freezeTableName: true}
+  )
+export abstract class Staff extends Model implements InterfaceStaff {
+    handleLogin(oldPassword: string, newPassword: string): boolean {
+        return false;
     }
-)
-    handleLogin(): void {
-    }
-    handleLogout(): void {
+    handleLogout(): boolean {
+        return false;
     }
     can(action: string): boolean {
         return false;
