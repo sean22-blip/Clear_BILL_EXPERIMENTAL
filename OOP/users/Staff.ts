@@ -9,7 +9,7 @@ export abstract class Staff implements InterfaceStaff {
         throw new Error("Method not implemented.");
     }
     abstract can(action: string): boolean;
-    protected getUserInfoById = async (req: Request, res: Response) => {
+     protected getUserInfoById = async (req: Request, res: Response) => {
         try {
             const { id } = req.params;
             if (!id) {
