@@ -1,6 +1,6 @@
-import { pool } from "../../system/dbConnection.js";
+import { pool } from "../../backend/config/dbConnection.js";
 import { Request, Response } from 'express';
-
+import { InterfaceStaff } from "./IStaff.js";
 export abstract class Staff implements InterfaceStaff {
     handleLogin(): void {
         throw new Error("Method not implemented.");
@@ -9,7 +9,7 @@ export abstract class Staff implements InterfaceStaff {
         throw new Error("Method not implemented.");
     }
     abstract can(action: string): boolean;
-    protected getUserInfoById = async (req: Request, res: Response) => {
+     protected getUserInfoById = async (req: Request, res: Response) => {
         try {
             const { id } = req.params;
             if (!id) {
