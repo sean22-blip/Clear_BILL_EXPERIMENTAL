@@ -1,3 +1,4 @@
+// import { Staff } from "./Staff";
 import { Staff } from "./Staff";
 class Admin extends Staff {
     handleLogin(): void {
